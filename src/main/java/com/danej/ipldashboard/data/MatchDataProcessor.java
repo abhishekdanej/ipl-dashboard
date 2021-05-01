@@ -16,9 +16,9 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 
 	@Override
 	public Match process(final MatchInput matchInput) throws Exception {
-		var match = new Match();
+		Match match = new Match();
 		
-		match.setId(matchInput.getId());
+		match.setId(Long.parseLong(matchInput.getId()));
 		match.setCity(matchInput.getCity());
 		
 		match.setDate(LocalDate.parse(matchInput.getDate()));
@@ -49,6 +49,8 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 		match.setResultMargin(matchInput.getResult_margin());
 		match.setUmpire1(matchInput.getUmpire1());
 		match.setUmpire2(matchInput.getUmpire2());
+		
+		log.info(match.getId() + " - "  + match.getCity());
 		
 		return match;
 	}

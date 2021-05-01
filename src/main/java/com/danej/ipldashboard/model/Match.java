@@ -2,8 +2,13 @@ package com.danej.ipldashboard.model;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Match {
 
+	@Id
 	private Long id;
 	private String city;
 	private LocalDate date;
@@ -22,8 +27,8 @@ public class Match {
 	public Long getId() {
 		return id;
 	}
-	public void setId(String id) {
-		this.id = Long.getLong(id);
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getCity() {
 		return city;
