@@ -52,7 +52,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
 		match.setUmpire1(matchInput.getUmpire1());
 		match.setUmpire2(matchInput.getUmpire2());
 		
-		log.info(match.toString());
+		log.debug(match.toString());
 		
 		return match;
 	}
